@@ -2,18 +2,46 @@
   "name": "noenv",
   "version": "1.0.0",
   "description": "noenv",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage": "https://github.com/adamovittorio/noenv#readme",
+  "bugs": {
+    "url": "https://github.com/adamovittorio/noenv/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adamovittorio/noenv.git"
   },
-  "author": "Vittorio Adamo",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/adamovittorio/noenv/issues"
+  "author": "Vittorio Adamo",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write **/*.js"
   },
-  "homepage": "https://github.com/adamovittorio/noenv#readme"
+  "dependencies": {
+    "fastify": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^12.0.0-alpha.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.0",
+    "prettier": "1.13.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run prettier",
+      "npm run lint"
+    ]
+  }
 }
