@@ -14,6 +14,7 @@
   "author": "Vittorio Adamo",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/server",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --write **/*.js"
@@ -31,6 +32,7 @@
     "eslint-plugin-standard": "^3.1.0",
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.0",
+    "nodemon": "^1.18.3",
     "prettier": "1.13.7"
   },
   "husky": {
@@ -43,5 +45,9 @@
       "npm run prettier",
       "npm run lint"
     ]
+  },
+  "nodemonConfig": {
+    "verbose": false,
+    "ignore": ["*.test.js"]
   }
 }
